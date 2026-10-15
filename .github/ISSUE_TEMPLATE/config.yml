@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/LLwedoIT/lit-spec/security/advisories/new
+    about: Report security concerns privately; do not open a public issue.
+  - name: Report abuse to GitHub
+    url: https://support.github.com/contact/report-abuse
+    about: Report immediate platform abuse, threats, or policy violations.

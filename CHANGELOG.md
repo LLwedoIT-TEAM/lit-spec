@@ -13,6 +13,7 @@ All notable changes to LIT are documented here. The format follows [Keep a Chang
 - Security policy and private vulnerability-reporting guidance.
 - Automated schema, example, and cross-reference validation.
 - Dependabot monitoring for workflow actions and Python validation dependencies.
+- Contribution guidance, community conduct rules, structured issue forms, and a pull-request checklist.
 
 ## [0.1.0] - 2026-10-15
 

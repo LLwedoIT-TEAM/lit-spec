@@ -1,0 +1,64 @@
+name: Specification proposal
+description: Propose a compatible feature, vocabulary, or design change.
+title: "[Proposal]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Interoperability problem
+      description: What cannot be represented or exchanged reliably today?
+    validations:
+      required: true
+
+  - type: textarea
+    id: use_cases
+    attributes:
+      label: Use cases
+      description: Provide concrete producer and consumer scenarios.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the smallest change that addresses the problem.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Include extensions or existing standards that might solve the problem.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: compatibility
+    attributes:
+      label: Compatibility impact
+      options:
+        - Backward-compatible
+        - Potentially breaking
+        - Unsure
+    validations:
+      required: true
+
+  - type: textarea
+    id: trust
+    attributes:
+      label: Trust considerations
+      description: Note privacy, security, rights, consent, or author-agency implications.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues and pull requests.
+          required: true

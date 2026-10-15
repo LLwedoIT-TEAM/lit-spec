@@ -61,7 +61,7 @@ LIT uses Semantic Versioning. Each manifest declares `litVersion`. Implementatio
 
 ## Contributing
 
-Open an issue describing the interoperability problem before proposing a breaking change. Pull requests should update the specification, affected schemas, examples, and changelog together. See [AGENTS.md](AGENTS.md) for repository-specific checks.
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a proposal or pull request. Breaking changes begin with an issue describing the interoperability problem. Pull requests should update the specification, affected schemas, examples, and changelog together. See [AGENTS.md](AGENTS.md) for repository-specific checks and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for community expectations.
 
 Report security concerns through the private process in [SECURITY.md](SECURITY.md), not through a public issue.
 
