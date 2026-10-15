@@ -1,0 +1,27 @@
+{
+  "litVersion": "0.1.0",
+  "id": "https://example.org/lit/glass-harbor",
+  "title": "Glass Harbor",
+  "type": "novel",
+  "description": "A compact example of a linear literary project.",
+  "language": "en",
+  "contributors": [
+    {
+      "id": "person:mira-vale",
+      "name": "Mira Vale",
+      "roles": [
+        "author"
+      ]
+    }
+  ],
+  "keywords": [
+    "coastal",
+    "mystery"
+  ],
+  "created": "2026-01-12",
+  "modified": "2026-10-15T16:00:00Z",
+  "components": "components.json",
+  "canon": "canon.json",
+  "provenance": "provenance.json",
+  "rights": "rights.json"
+}

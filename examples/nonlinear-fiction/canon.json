@@ -1,0 +1,42 @@
+{
+  "litVersion": "0.1.0",
+  "project": "https://example.org/lit/lantern-map",
+  "assertions": [
+    {
+      "id": "canon:lantern-lit",
+      "subject": "object:crossroads-lantern",
+      "predicate": "is-lit",
+      "value": true,
+      "status": "canonical",
+      "scope": [
+        "node:crossroads"
+      ],
+      "evidence": [
+        "node:crossroads"
+      ]
+    },
+    {
+      "id": "canon:traveler-name",
+      "subject": "character:traveler",
+      "predicate": "remembered-name",
+      "value": "heard among the bells",
+      "status": "provisional",
+      "scope": [
+        "node:bell-road"
+      ],
+      "evidence": [
+        "node:bell-road"
+      ]
+    },
+    {
+      "id": "canon:paths-same-place",
+      "subject": "node:bell-road",
+      "predicate": "converges-with",
+      "object": "node:tunnel",
+      "status": "canonical",
+      "evidence": [
+        "node:observatory"
+      ]
+    }
+  ]
+}

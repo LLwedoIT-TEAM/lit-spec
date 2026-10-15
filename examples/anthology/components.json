@@ -1,0 +1,41 @@
+{
+  "litVersion": "0.1.0",
+  "project": "https://example.org/lit/small-constellations",
+  "components": [
+    {
+      "id": "work:paper-moon",
+      "type": "short-story",
+      "title": "Paper Moon",
+      "language": "en",
+      "sequence": 1,
+      "content": {
+        "mediaType": "text/markdown",
+        "href": "content/paper-moon.md"
+      },
+      "contributors": [
+        "person:ana-ortiz"
+      ]
+    },
+    {
+      "id": "work:after-the-static",
+      "type": "essay",
+      "title": "After the Static",
+      "language": "en",
+      "sequence": 2,
+      "content": {
+        "mediaType": "text/markdown",
+        "href": "content/after-the-static.md"
+      },
+      "contributors": [
+        "person:theo-north"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "work:paper-moon",
+      "target": "work:after-the-static",
+      "type": "precedes"
+    }
+  ]
+}

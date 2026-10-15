@@ -1,0 +1,18 @@
+{
+  "litVersion": "0.1.0",
+  "project": "https://example.org/lit/small-constellations",
+  "assertions": [
+    {
+      "id": "canon:works-independent",
+      "subject": "https://example.org/lit/small-constellations",
+      "predicate": "shared-continuity",
+      "value": false,
+      "status": "canonical",
+      "scope": [
+        "work:paper-moon",
+        "work:after-the-static"
+      ],
+      "note": "The anthology's works do not share a story world."
+    }
+  ]
+}

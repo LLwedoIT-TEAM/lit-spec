@@ -1,0 +1,81 @@
+{
+  "litVersion": "0.1.0",
+  "project": "https://example.org/lit/small-constellations",
+  "holders": [
+    {
+      "id": "person:ana-ortiz",
+      "name": "Ana Ortiz"
+    },
+    {
+      "id": "person:theo-north",
+      "name": "Theo North"
+    }
+  ],
+  "grants": [
+    {
+      "id": "grant:paper-moon",
+      "assets": [
+        "work:paper-moon"
+      ],
+      "holder": "person:ana-ortiz",
+      "license": {
+        "name": "Anthology publication agreement"
+      },
+      "permittedUses": [
+        "read",
+        "reproduce",
+        "distribute",
+        "display"
+      ],
+      "territories": [
+        "worldwide"
+      ],
+      "languages": [
+        "en"
+      ],
+      "media": [
+        "print",
+        "digital"
+      ],
+      "ai": {
+        "training": "unspecified",
+        "inference": "unspecified",
+        "retrieval": "unspecified",
+        "syntheticAdaptation": "unspecified"
+      }
+    },
+    {
+      "id": "grant:after-static",
+      "assets": [
+        "work:after-the-static"
+      ],
+      "holder": "person:theo-north",
+      "license": {
+        "name": "Anthology publication agreement"
+      },
+      "permittedUses": [
+        "read",
+        "reproduce",
+        "distribute",
+        "display"
+      ],
+      "territories": [
+        "worldwide"
+      ],
+      "languages": [
+        "en"
+      ],
+      "media": [
+        "print",
+        "digital"
+      ],
+      "ai": {
+        "training": "prohibited",
+        "inference": "conditional",
+        "retrieval": "conditional",
+        "syntheticAdaptation": "prohibited",
+        "condition": "Only accessibility and editorial workflows approved by the rights holder."
+      }
+    }
+  ]
+}

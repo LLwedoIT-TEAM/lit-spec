@@ -1,0 +1,245 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lit-spec.org/schema/rights.schema.json",
+  "title": "LIT rights manifest",
+  "description": "Rights holders, grants, usage constraints, and AI-specific permissions.",
+  "type": "object",
+  "required": [
+    "litVersion",
+    "project",
+    "holders",
+    "grants"
+  ],
+  "properties": {
+    "litVersion": {
+      "$ref": "#/$defs/version"
+    },
+    "project": {
+      "type": "string",
+      "format": "uri"
+    },
+    "holders": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/holder"
+      }
+    },
+    "grants": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/grant"
+      }
+    },
+    "notice": {
+      "type": "string"
+    },
+    "extensions": {
+      "$ref": "#/$defs/extensions"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "version": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"
+    },
+    "entityId": {
+      "type": "string",
+      "anyOf": [
+        {
+          "format": "uri"
+        },
+        {
+          "pattern": "^[A-Za-z][A-Za-z0-9._:-]*$"
+        }
+      ]
+    },
+    "holder": {
+      "type": "object",
+      "required": [
+        "id",
+        "name"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/entityId"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false
+    },
+    "license": {
+      "type": "object",
+      "properties": {
+        "spdx": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9.-]+$"
+        },
+        "uri": {
+          "type": "string",
+          "format": "uri"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "spdx"
+          ]
+        },
+        {
+          "required": [
+            "uri"
+          ]
+        },
+        {
+          "required": [
+            "name"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "aiPermissions": {
+      "type": "object",
+      "required": [
+        "training",
+        "inference",
+        "retrieval",
+        "syntheticAdaptation"
+      ],
+      "properties": {
+        "training": {
+          "$ref": "#/$defs/permission"
+        },
+        "inference": {
+          "$ref": "#/$defs/permission"
+        },
+        "retrieval": {
+          "$ref": "#/$defs/permission"
+        },
+        "syntheticAdaptation": {
+          "$ref": "#/$defs/permission"
+        },
+        "condition": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "permission": {
+      "enum": [
+        "allowed",
+        "prohibited",
+        "conditional",
+        "unspecified"
+      ]
+    },
+    "grant": {
+      "type": "object",
+      "required": [
+        "id",
+        "assets",
+        "holder",
+        "license"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/entityId"
+        },
+        "assets": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/entityId"
+          }
+        },
+        "holder": {
+          "$ref": "#/$defs/entityId"
+        },
+        "license": {
+          "$ref": "#/$defs/license"
+        },
+        "permittedUses": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "read",
+              "reproduce",
+              "distribute",
+              "display",
+              "perform",
+              "translate",
+              "adapt",
+              "archive",
+              "text-and-data-mine"
+            ]
+          }
+        },
+        "territories": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 2
+          }
+        },
+        "languages": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z]{2,8}(-[A-Za-z0-9]{1,8})*$"
+          }
+        },
+        "media": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "validFrom": {
+          "type": "string",
+          "format": "date"
+        },
+        "validUntil": {
+          "type": "string",
+          "format": "date"
+        },
+        "ai": {
+          "$ref": "#/$defs/aiPermissions"
+        },
+        "note": {
+          "type": "string"
+        },
+        "extensions": {
+          "$ref": "#/$defs/extensions"
+        }
+      },
+      "additionalProperties": false
+    },
+    "extensions": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

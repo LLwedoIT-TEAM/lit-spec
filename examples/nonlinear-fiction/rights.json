@@ -1,0 +1,50 @@
+{
+  "litVersion": "0.1.0",
+  "project": "https://example.org/lit/lantern-map",
+  "holders": [
+    {
+      "id": "person:ren-okafor",
+      "name": "Ren Okafor"
+    }
+  ],
+  "grants": [
+    {
+      "id": "grant:lantern-map-sample",
+      "assets": [
+        "node:crossroads",
+        "node:bell-road",
+        "node:tunnel",
+        "node:observatory"
+      ],
+      "holder": "person:ren-okafor",
+      "license": {
+        "spdx": "CC-BY-4.0",
+        "uri": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "permittedUses": [
+        "read",
+        "reproduce",
+        "distribute",
+        "display",
+        "adapt"
+      ],
+      "territories": [
+        "worldwide"
+      ],
+      "languages": [
+        "en"
+      ],
+      "media": [
+        "digital"
+      ],
+      "ai": {
+        "training": "prohibited",
+        "inference": "allowed",
+        "retrieval": "allowed",
+        "syntheticAdaptation": "conditional",
+        "condition": "Adaptations must comply with the license, include attribution, and disclose material AI involvement."
+      }
+    }
+  ],
+  "notice": "Copyright 2026 Ren Okafor. Example names and text are fictional."
+}

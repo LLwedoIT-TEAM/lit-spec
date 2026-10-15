@@ -1,0 +1,72 @@
+{
+  "litVersion": "0.1.0",
+  "project": "https://example.org/lit/lantern-map",
+  "components": [
+    {
+      "id": "node:crossroads",
+      "type": "scene",
+      "title": "The Crossroads",
+      "language": "en",
+      "content": {
+        "mediaType": "text/markdown",
+        "inline": "A lantern hangs above two paths: one toward bells, one underground."
+      }
+    },
+    {
+      "id": "node:bell-road",
+      "type": "scene",
+      "title": "The Bell Road",
+      "language": "en",
+      "content": {
+        "mediaType": "text/markdown",
+        "inline": "Each bell repeats a name the traveler has forgotten."
+      }
+    },
+    {
+      "id": "node:tunnel",
+      "type": "scene",
+      "title": "The Tunnel",
+      "language": "en",
+      "content": {
+        "mediaType": "text/markdown",
+        "inline": "Under the hill, the traveler finds yesterday's footprints pointing outward."
+      }
+    },
+    {
+      "id": "node:observatory",
+      "type": "ending",
+      "title": "The Observatory",
+      "language": "en",
+      "content": {
+        "mediaType": "text/markdown",
+        "inline": "Both paths end beneath a sky that remembers every choice."
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "source": "node:crossroads",
+      "target": "node:bell-road",
+      "type": "branches-to",
+      "label": "Follow the bells",
+      "condition": "The reader chooses the road marked with a bell."
+    },
+    {
+      "source": "node:crossroads",
+      "target": "node:tunnel",
+      "type": "branches-to",
+      "label": "Enter the tunnel",
+      "condition": "The reader chooses the path beneath the hill."
+    },
+    {
+      "source": "node:bell-road",
+      "target": "node:observatory",
+      "type": "converges-at"
+    },
+    {
+      "source": "node:tunnel",
+      "target": "node:observatory",
+      "type": "converges-at"
+    }
+  ]
+}

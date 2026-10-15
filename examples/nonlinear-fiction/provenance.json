@@ -1,0 +1,57 @@
+{
+  "litVersion": "0.1.0",
+  "project": "https://example.org/lit/lantern-map",
+  "agents": [
+    {
+      "id": "person:ren-okafor",
+      "type": "person",
+      "name": "Ren Okafor"
+    },
+    {
+      "id": "ai:example-language-model",
+      "type": "ai-system",
+      "name": "Example Language Model",
+      "version": "2026-06"
+    }
+  ],
+  "activities": [
+    {
+      "id": "activity:story-design",
+      "type": "creation",
+      "agentIds": [
+        "person:ren-okafor"
+      ],
+      "outputs": [
+        "node:crossroads",
+        "node:bell-road",
+        "node:tunnel",
+        "node:observatory"
+      ],
+      "startedAt": "2026-06-01T15:00:00Z",
+      "humanReviewed": true
+    },
+    {
+      "id": "activity:tunnel-revision",
+      "type": "ai-assisted-revision",
+      "agentIds": [
+        "person:ren-okafor",
+        "ai:example-language-model"
+      ],
+      "inputs": [
+        "node:tunnel"
+      ],
+      "outputs": [
+        "node:tunnel"
+      ],
+      "startedAt": "2026-06-08T18:15:00Z",
+      "endedAt": "2026-06-08T18:32:00Z",
+      "tool": {
+        "name": "Example Writing Assistant",
+        "version": "1.0",
+        "model": "example-language-model-2026-06"
+      },
+      "humanReviewed": true,
+      "note": "The author selected and substantially edited a suggested sensory detail."
+    }
+  ]
+}

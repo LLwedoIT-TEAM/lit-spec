@@ -1,0 +1,24 @@
+{
+  "litVersion": "0.1.0",
+  "id": "https://example.org/lit/lantern-map",
+  "title": "The Lantern Map",
+  "type": "nonlinear-fiction",
+  "description": "A branching story with two routes to one ending.",
+  "language": "en",
+  "contributors": [
+    {
+      "id": "person:ren-okafor",
+      "name": "Ren Okafor",
+      "roles": [
+        "author",
+        "designer"
+      ]
+    }
+  ],
+  "created": "2026-06-01",
+  "modified": "2026-10-15T16:00:00Z",
+  "components": "components.json",
+  "canon": "canon.json",
+  "provenance": "provenance.json",
+  "rights": "rights.json"
+}

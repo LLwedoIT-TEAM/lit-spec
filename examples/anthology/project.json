@@ -1,0 +1,37 @@
+{
+  "litVersion": "0.1.0",
+  "id": "https://example.org/lit/small-constellations",
+  "title": "Small Constellations",
+  "type": "anthology",
+  "description": "Two short works assembled by an editor.",
+  "language": "en",
+  "contributors": [
+    {
+      "id": "person:iko-reed",
+      "name": "Iko Reed",
+      "roles": [
+        "editor"
+      ]
+    },
+    {
+      "id": "person:ana-ortiz",
+      "name": "Ana Ortiz",
+      "roles": [
+        "author"
+      ]
+    },
+    {
+      "id": "person:theo-north",
+      "name": "Theo North",
+      "roles": [
+        "author"
+      ]
+    }
+  ],
+  "created": "2026-04-20",
+  "modified": "2026-10-15T16:00:00Z",
+  "components": "components.json",
+  "canon": "canon.json",
+  "provenance": "provenance.json",
+  "rights": "rights.json"
+}
