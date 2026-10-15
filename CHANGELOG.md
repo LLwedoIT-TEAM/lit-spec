@@ -12,6 +12,7 @@ All notable changes to LIT are documented here. The format follows [Keep a Chang
 - Novel, anthology, and nonlinear-fiction examples.
 - Security policy and private vulnerability-reporting guidance.
 - Automated schema, example, and cross-reference validation.
+- Manual validation runs from the GitHub Actions page.
 - Dependabot monitoring for workflow actions and Python validation dependencies.
 - Contribution guidance, community conduct rules, structured issue forms, and a pull-request checklist.
 
