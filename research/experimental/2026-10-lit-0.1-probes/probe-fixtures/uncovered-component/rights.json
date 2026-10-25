@@ -1,0 +1,46 @@
+{
+  "litVersion": "0.1.0",
+  "project": "https://example.org/lit/glass-harbor",
+  "holders": [
+    {
+      "id": "person:mira-vale",
+      "name": "Mira Vale"
+    }
+  ],
+  "grants": [
+    {
+      "id": "grant:public-sample",
+      "assets": [
+        "chapter:arrival"
+      ],
+      "holder": "person:mira-vale",
+      "license": {
+        "spdx": "CC-BY-NC-4.0",
+        "uri": "https://creativecommons.org/licenses/by-nc/4.0/"
+      },
+      "permittedUses": [
+        "read",
+        "reproduce",
+        "distribute",
+        "display"
+      ],
+      "territories": [
+        "worldwide"
+      ],
+      "languages": [
+        "en"
+      ],
+      "media": [
+        "digital"
+      ],
+      "ai": {
+        "training": "prohibited",
+        "inference": "conditional",
+        "retrieval": "conditional",
+        "syntheticAdaptation": "prohibited",
+        "condition": "Inference and retrieval require user-directed access to a lawfully obtained copy."
+      }
+    }
+  ],
+  "notice": "Copyright 2026 Mira Vale. Example names and text are fictional."
+}

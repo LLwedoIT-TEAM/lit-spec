@@ -1,0 +1,246 @@
+### upstream/anthology [default]
+    WARNING spec.ref.local-unresolved [spec; SPECIFICATION.md §11.3] components.json#/components/0/content/href:13:17 (work:paper-moon): Content file content/paper-moon.md not found in bundle
+    WARNING spec.ref.local-unresolved [spec; SPECIFICATION.md §11.3] components.json#/components/1/content/href:27:17 (work:after-the-static): Content file content/after-the-static.md not found in bundle
+    VALID: 0 error(s), 2 warning(s), 0 info
+    exit=0
+### upstream/anthology [strict]
+    WARNING spec.ref.local-unresolved [spec; SPECIFICATION.md §11.3] components.json#/components/0/content/href:13:17 (work:paper-moon): Content file content/paper-moon.md not found in bundle
+    WARNING spec.ref.local-unresolved [spec; SPECIFICATION.md §11.3] components.json#/components/1/content/href:27:17 (work:after-the-static): Content file content/after-the-static.md not found in bundle
+    VALID: 0 error(s), 2 warning(s), 0 info
+    exit=0
+### upstream/nonlinear-fiction [default]
+    VALID: 0 error(s), 0 warning(s), 0 info
+    exit=0
+### upstream/nonlinear-fiction [strict]
+    VALID: 0 error(s), 0 warning(s), 0 info
+    exit=0
+### upstream/novel [default]
+    VALID: 0 error(s), 0 warning(s), 0 info
+    exit=0
+### upstream/novel [strict]
+    VALID: 0 error(s), 0 warning(s), 0 info
+    exit=0
+### day-one/day-one-stress-test [default]
+    VALID: 0 error(s), 0 warning(s), 0 info
+    exit=0
+### day-one/day-one-stress-test [strict]
+    VALID: 0 error(s), 0 warning(s), 0 info
+    exit=0
+### derived/assertion-object-and-value [default]
+    ERROR schema.not [schema; schemas/v0.1/canon.schema.json#/oneOf/0/not] canon.json#/assertions/0:5:5 (canon:lighthouse-status): /assertions/0 must NOT be valid
+    ERROR schema.not [schema; schemas/v0.1/canon.schema.json#/oneOf/1/not] canon.json#/assertions/0:5:5 (canon:lighthouse-status): /assertions/0 must NOT be valid
+    ERROR schema.oneOf [schema; schemas/v0.1/canon.schema.json#/oneOf] canon.json#/assertions/0:5:5 (canon:lighthouse-status): /assertions/0 must match exactly one schema in oneOf
+    ERROR schema.enum [schema; schemas/v0.1/canon.schema.json#/properties/status/enum] canon.json#/assertions/1/status:21:17 (canon:signal-source): /assertions/1/status must be equal to one of the allowed values: ["canonical","provisional","disputed","retconned","ambiguous"]
+    ERROR spec.assertion.object-value-exclusive [spec; SPECIFICATION.md §6] canon.json#/assertions/0:5:5 (canon:lighthouse-status): Assertion has both object and value
+    ERROR spec.assertion.status [spec; SPECIFICATION.md §6] canon.json#/assertions/1/status:21:17 (canon:signal-source): status "hidden" is not one of canonical, provisional, disputed, retconned, ambiguous
+    INVALID: 6 error(s), 0 warning(s), 0 info
+    exit=1
+### derived/assertion-object-and-value [strict]
+    ERROR schema.not [schema; schemas/v0.1/canon.schema.json#/oneOf/0/not] canon.json#/assertions/0:5:5 (canon:lighthouse-status): /assertions/0 must NOT be valid
+    ERROR schema.not [schema; schemas/v0.1/canon.schema.json#/oneOf/1/not] canon.json#/assertions/0:5:5 (canon:lighthouse-status): /assertions/0 must NOT be valid
+    ERROR schema.oneOf [schema; schemas/v0.1/canon.schema.json#/oneOf] canon.json#/assertions/0:5:5 (canon:lighthouse-status): /assertions/0 must match exactly one schema in oneOf
+    ERROR schema.enum [schema; schemas/v0.1/canon.schema.json#/properties/status/enum] canon.json#/assertions/1/status:21:17 (canon:signal-source): /assertions/1/status must be equal to one of the allowed values: ["canonical","provisional","disputed","retconned","ambiguous"]
+    ERROR spec.assertion.object-value-exclusive [spec; SPECIFICATION.md §6] canon.json#/assertions/0:5:5 (canon:lighthouse-status): Assertion has both object and value
+    ERROR spec.assertion.status [spec; SPECIFICATION.md §6] canon.json#/assertions/1/status:21:17 (canon:signal-source): status "hidden" is not one of canonical, provisional, disputed, retconned, ambiguous
+    INVALID: 6 error(s), 0 warning(s), 0 info
+    exit=1
+### derived/bad-semver [default]
+    ERROR schema.pattern [schema; schemas/v0.1/components.schema.json#/$defs/version/pattern] components.json#/litVersion:2:17: /litVersion must match pattern "^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$"
+    ERROR spec.version.not-semver [spec; SPECIFICATION.md §3.1] components.json#/litVersion:2:17: litVersion "0.1" is not a SemVer 2.0.0 string
+    ERROR spec.version.not-semver [spec; SPECIFICATION.md §3.1] canon.json#/litVersion:2:17: litVersion "0.1.0-01" is not a SemVer 2.0.0 string
+    WARNING spec.version.mismatch [spec; SPECIFICATION.md §3.1, §11.1] bundle: Manifests declare different litVersions: project=0.1.0, components=0.1, canon=0.1.0-01, provenance=0.1.0, rights=0.1.0
+    INVALID: 3 error(s), 1 warning(s), 0 info
+    exit=1
+### derived/bad-semver [strict]
+    ERROR schema.pattern [schema; schemas/v0.1/components.schema.json#/$defs/version/pattern] components.json#/litVersion:2:17: /litVersion must match pattern "^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$"
+    ERROR spec.version.not-semver [spec; SPECIFICATION.md §3.1] components.json#/litVersion:2:17: litVersion "0.1" is not a SemVer 2.0.0 string
+    ERROR spec.version.not-semver [spec; SPECIFICATION.md §3.1] canon.json#/litVersion:2:17: litVersion "0.1.0-01" is not a SemVer 2.0.0 string
+    WARNING spec.version.mismatch [spec; SPECIFICATION.md §3.1, §11.1] bundle: Manifests declare different litVersions: project=0.1.0, components=0.1, canon=0.1.0-01, provenance=0.1.0, rights=0.1.0
+    INVALID: 3 error(s), 1 warning(s), 0 info
+    exit=1
+### derived/content-inline-and-href [default]
+    ERROR schema.not [schema; schemas/v0.1/components.schema.json#/$defs/content/oneOf/0/not] components.json#/components/0/content:11:18 (chapter:arrival): /components/0/content must NOT be valid
+    ERROR schema.not [schema; schemas/v0.1/components.schema.json#/$defs/content/oneOf/1/not] components.json#/components/0/content:11:18 (chapter:arrival): /components/0/content must NOT be valid
+    ERROR schema.oneOf [schema; schemas/v0.1/components.schema.json#/$defs/content/oneOf] components.json#/components/0/content:11:18 (chapter:arrival): /components/0/content must match exactly one schema in oneOf
+    ERROR spec.component.content-exclusive [spec; SPECIFICATION.md §5] components.json#/components/0/content:11:18 (chapter:arrival): content has both inline and href
+    WARNING spec.ref.local-unresolved [spec; SPECIFICATION.md §11.3] components.json#/components/0/content/href:14:17 (chapter:arrival): Content file chapter-1.md not found in bundle
+    INVALID: 4 error(s), 1 warning(s), 0 info
+    exit=1
+### derived/content-inline-and-href [strict]
+    ERROR schema.not [schema; schemas/v0.1/components.schema.json#/$defs/content/oneOf/0/not] components.json#/components/0/content:11:18 (chapter:arrival): /components/0/content must NOT be valid
+    ERROR schema.not [schema; schemas/v0.1/components.schema.json#/$defs/content/oneOf/1/not] components.json#/components/0/content:11:18 (chapter:arrival): /components/0/content must NOT be valid
+    ERROR schema.oneOf [schema; schemas/v0.1/components.schema.json#/$defs/content/oneOf] components.json#/components/0/content:11:18 (chapter:arrival): /components/0/content must match exactly one schema in oneOf
+    ERROR spec.component.content-exclusive [spec; SPECIFICATION.md §5] components.json#/components/0/content:11:18 (chapter:arrival): content has both inline and href
+    WARNING spec.ref.local-unresolved [spec; SPECIFICATION.md §11.3] components.json#/components/0/content/href:14:17 (chapter:arrival): Content file chapter-1.md not found in bundle
+    INVALID: 4 error(s), 1 warning(s), 0 info
+    exit=1
+### derived/custom-property-outside-extensions [default]
+    ERROR schema.additionalProperties [schema; schemas/v0.1/project.schema.json#/additionalProperties] project.json#/mspDraft:27:15: (root) must NOT have additional properties ("mspDraft")
+    ERROR schema.additionalProperties [schema; schemas/v0.1/components.schema.json#/additionalProperties] components.json#/components/0/wordCount:18:20 (chapter:arrival): /components/0 must NOT have additional properties ("wordCount")
+    ERROR spec.extensions.top-level-field [spec; SPECIFICATION.md §3.5, §10] project.json#/mspDraft:27:15: Unknown property "mspDraft" on project (top level); preserved but not allowed here
+    WARNING spec.extensions.key-not-namespaced [spec; SPECIFICATION.md §3.5] project.json#/extensions/draftFlag:29:18: Extension key "draftFlag" is not an absolute URI or prefixed name
+    ERROR spec.extensions.custom-property [spec; SPECIFICATION.md §3.5] components.json#/components/0/wordCount:18:20 (chapter:arrival): Unknown property "wordCount" on component; preserved but not allowed here
+    INVALID: 4 error(s), 1 warning(s), 0 info
+    exit=1
+### derived/custom-property-outside-extensions [strict]
+    ERROR schema.additionalProperties [schema; schemas/v0.1/project.schema.json#/additionalProperties] project.json#/mspDraft:27:15: (root) must NOT have additional properties ("mspDraft")
+    ERROR schema.additionalProperties [schema; schemas/v0.1/components.schema.json#/additionalProperties] components.json#/components/0/wordCount:18:20 (chapter:arrival): /components/0 must NOT have additional properties ("wordCount")
+    ERROR spec.extensions.top-level-field [spec; SPECIFICATION.md §3.5, §10] project.json#/mspDraft:27:15: Unknown property "mspDraft" on project (top level); preserved but not allowed here
+    WARNING spec.extensions.key-not-namespaced [spec; SPECIFICATION.md §3.5] project.json#/extensions/draftFlag:29:18: Extension key "draftFlag" is not an absolute URI or prefixed name
+    ERROR spec.extensions.custom-property [spec; SPECIFICATION.md §3.5] components.json#/components/0/wordCount:18:20 (chapter:arrival): Unknown property "wordCount" on component; preserved but not allowed here
+    INVALID: 4 error(s), 1 warning(s), 0 info
+    exit=1
+### derived/dangling-references [default]
+    WARNING spec.provenance.io-unresolved [spec; SPECIFICATION.md §3.2, §11.5] provenance.json#/activities/0/outputs/4:30:9 (activity:story-design): Activity outputs "node:ghost" is not an ID in this bundle
+    WARNING reference-checker.relationship-endpoint-unknown [reference-checker; lit-spec scripts/validate.py @00fe701] components.json#/relationships/0/target:49:17: Relationship target "node:missing" is not a component
+    WARNING reference-checker.activity-agent-unknown [reference-checker; lit-spec scripts/validate.py @00fe701] provenance.json#/activities/0/agentIds/1:23:9 (activity:story-design): Agent "person:nobody" is not in provenance.agents
+    WARNING reference-checker.grant-holder-unknown [reference-checker; lit-spec scripts/validate.py @00fe701] rights.json#/grants/0/holder:20:17 (grant:lantern-map-sample): Grant holder "org:unknown-holder" is not in rights.holders
+    WARNING reference-checker.grant-asset-unknown [reference-checker; lit-spec scripts/validate.py @00fe701] rights.json#/grants/0/assets/4:18:9 (grant:lantern-map-sample): Grant asset "node:phantom" is not a component
+    VALID: 0 error(s), 5 warning(s), 0 info
+    exit=0
+### derived/dangling-references [strict]
+    WARNING spec.provenance.io-unresolved [spec; SPECIFICATION.md §3.2, §11.5] provenance.json#/activities/0/outputs/4:30:9 (activity:story-design): Activity outputs "node:ghost" is not an ID in this bundle
+    ERROR reference-checker.relationship-endpoint-unknown [reference-checker; lit-spec scripts/validate.py @00fe701] components.json#/relationships/0/target:49:17: Relationship target "node:missing" is not a component
+    ERROR reference-checker.activity-agent-unknown [reference-checker; lit-spec scripts/validate.py @00fe701] provenance.json#/activities/0/agentIds/1:23:9 (activity:story-design): Agent "person:nobody" is not in provenance.agents
+    ERROR reference-checker.grant-holder-unknown [reference-checker; lit-spec scripts/validate.py @00fe701] rights.json#/grants/0/holder:20:17 (grant:lantern-map-sample): Grant holder "org:unknown-holder" is not in rights.holders
+    ERROR reference-checker.grant-asset-unknown [reference-checker; lit-spec scripts/validate.py @00fe701] rights.json#/grants/0/assets/4:18:9 (grant:lantern-map-sample): Grant asset "node:phantom" is not a component
+    INVALID: 4 error(s), 1 warning(s), 0 info
+    exit=1
+### derived/duplicate-ids [default]
+    ERROR spec.id.duplicate [spec; SPECIFICATION.md §3.2, §11.2] components.json#/components/2/id:34:13 (chapter:arrival): Duplicate id "chapter:arrival" in components (first at index 0, again at 2)
+    ERROR spec.id.duplicate [spec; SPECIFICATION.md §3.2, §11.2] canon.json#/assertions/2/id:27:13 (canon:lighthouse-status): Duplicate id "canon:lighthouse-status" in canon assertions (first at index 0, again at 2)
+    INVALID: 2 error(s), 0 warning(s), 0 info
+    exit=1
+### derived/duplicate-ids [strict]
+    ERROR spec.id.duplicate [spec; SPECIFICATION.md §3.2, §11.2] components.json#/components/2/id:34:13 (chapter:arrival): Duplicate id "chapter:arrival" in components (first at index 0, again at 2)
+    ERROR spec.id.duplicate [spec; SPECIFICATION.md §3.2, §11.2] canon.json#/assertions/2/id:27:13 (canon:lighthouse-status): Duplicate id "canon:lighthouse-status" in canon assertions (first at index 0, again at 2)
+    INVALID: 2 error(s), 0 warning(s), 0 info
+    exit=1
+### derived/duplicate-sequence [default]
+    ERROR spec.component.duplicate-sequence [spec; SPECIFICATION.md §5, §11.4] components.json#/components/1/sequence:24:19 (chapter:signal): sequence 1 also used by chapter:arrival
+    INVALID: 1 error(s), 0 warning(s), 0 info
+    exit=1
+### derived/duplicate-sequence [strict]
+    ERROR spec.component.duplicate-sequence [spec; SPECIFICATION.md §5, §11.4] components.json#/components/1/sequence:24:19 (chapter:signal): sequence 1 also used by chapter:arrival
+    INVALID: 1 error(s), 0 warning(s), 0 info
+    exit=1
+### derived/integrity-mismatch [default]
+    WARNING spec.content.integrity-mismatch [spec; SPECIFICATION.md §9, §11.7] components.json#/components/1/content/integrity:29:22 (work:after-the-static): Integrity mismatch for content/after-the-static.md: declared sha256-U4p0HGInM6/hR4Gek52CzAce376z60ntcBpVl1rCiLM=, actual sha256-ImOl7dpR0j/4k5jmla8bYW7Yt2/ddhW83Hdl3SeCCXE=
+    VALID: 0 error(s), 1 warning(s), 0 info
+    exit=0
+### derived/integrity-mismatch [strict]
+    WARNING spec.content.integrity-mismatch [spec; SPECIFICATION.md §9, §11.7] components.json#/components/1/content/integrity:29:22 (work:after-the-static): Integrity mismatch for content/after-the-static.md: declared sha256-U4p0HGInM6/hR4Gek52CzAce376z60ntcBpVl1rCiLM=, actual sha256-ImOl7dpR0j/4k5jmla8bYW7Yt2/ddhW83Hdl3SeCCXE=
+    VALID: 0 error(s), 1 warning(s), 0 info
+    exit=0
+### derived/invalid-utf8-project [default]
+    ERROR spec.json.invalid-utf8 [spec; SPECIFICATION.md §2] project.json: project.json is not valid UTF-8
+    INFO policy.bundle.default-manifest-location [policy; SPECIFICATION.md §9] bundle: project.json unavailable; tried default location components.json for diagnostics
+    INFO policy.bundle.default-manifest-location [policy; SPECIFICATION.md §9] bundle: project.json unavailable; tried default location canon.json for diagnostics
+    INFO policy.bundle.default-manifest-location [policy; SPECIFICATION.md §9] bundle: project.json unavailable; tried default location provenance.json for diagnostics
+    INFO policy.bundle.default-manifest-location [policy; SPECIFICATION.md §9] bundle: project.json unavailable; tried default location rights.json for diagnostics
+    INVALID: 1 error(s), 0 warning(s), 4 info
+    exit=1
+### derived/invalid-utf8-project [strict]
+    ERROR spec.json.invalid-utf8 [spec; SPECIFICATION.md §2] project.json: project.json is not valid UTF-8
+    INFO policy.bundle.default-manifest-location [policy; SPECIFICATION.md §9] bundle: project.json unavailable; tried default location components.json for diagnostics
+    INFO policy.bundle.default-manifest-location [policy; SPECIFICATION.md §9] bundle: project.json unavailable; tried default location canon.json for diagnostics
+    INFO policy.bundle.default-manifest-location [policy; SPECIFICATION.md §9] bundle: project.json unavailable; tried default location provenance.json for diagnostics
+    INFO policy.bundle.default-manifest-location [policy; SPECIFICATION.md §9] bundle: project.json unavailable; tried default location rights.json for diagnostics
+    INVALID: 1 error(s), 0 warning(s), 4 info
+    exit=1
+### derived/lossy-json [default]
+    WARNING policy.json.number-precision [policy; SPECIFICATION.md §2, §3.5 (preservation)] canon.json#/extensions/https:~1~1lit-spec.org~1extensions~1epistemic-disclosure~1v0/bigId:267:16: Number 12345678901234567890 cannot be represented exactly as an IEEE-754 double
+    ERROR policy.json.duplicate-key [policy; SPECIFICATION.md §2, §3.5 (preservation)] canon.json#/extensions/https:~1~1lit-spec.org~1extensions~1epistemic-disclosure~1v0/zeta:268:7: Duplicate object key "zeta"
+    WARNING policy.json.key-order-not-preserved [policy; SPECIFICATION.md §2, §3.5 (preservation)] canon.json#/extensions/https:~1~1lit-spec.org~1extensions~1epistemic-disclosure~1v0:291:5: Integer-like keys (10, 2) will be reordered by the JS object model
+    INVALID: 1 error(s), 2 warning(s), 0 info
+    exit=1
+### derived/lossy-json [strict]
+    WARNING policy.json.number-precision [policy; SPECIFICATION.md §2, §3.5 (preservation)] canon.json#/extensions/https:~1~1lit-spec.org~1extensions~1epistemic-disclosure~1v0/bigId:267:16: Number 12345678901234567890 cannot be represented exactly as an IEEE-754 double
+    ERROR policy.json.duplicate-key [policy; SPECIFICATION.md §2, §3.5 (preservation)] canon.json#/extensions/https:~1~1lit-spec.org~1extensions~1epistemic-disclosure~1v0/zeta:268:7: Duplicate object key "zeta"
+    WARNING policy.json.key-order-not-preserved [policy; SPECIFICATION.md §2, §3.5 (preservation)] canon.json#/extensions/https:~1~1lit-spec.org~1extensions~1epistemic-disclosure~1v0:291:5: Integer-like keys (10, 2) will be reordered by the JS object model
+    INVALID: 1 error(s), 2 warning(s), 0 info
+    exit=1
+### derived/malformed-json-canon [default]
+    INFO policy.json.syntax-position [policy; SPECIFICATION.md §2] canon.json:26:4: Scanner stopped at line 26, column 4
+    ERROR spec.json.malformed [spec; SPECIFICATION.md §2] canon.json: canon.json is not valid JSON: Expected ',' or '}' after property value in JSON at position 686
+    INVALID: 1 error(s), 0 warning(s), 1 info
+    exit=1
+### derived/malformed-json-canon [strict]
+    INFO policy.json.syntax-position [policy; SPECIFICATION.md §2] canon.json:26:4: Scanner stopped at line 26, column 4
+    ERROR spec.json.malformed [spec; SPECIFICATION.md §2] canon.json: canon.json is not valid JSON: Expected ',' or '}' after property value in JSON at position 686
+    INVALID: 1 error(s), 0 warning(s), 1 info
+    exit=1
+### derived/missing-manifest [default]
+    ERROR spec.bundle.manifest-missing [spec; SPECIFICATION.md §2] project.json#/provenance: provenance manifest not found at provenance.json
+    INVALID: 1 error(s), 0 warning(s), 0 info
+    exit=1
+### derived/missing-manifest [strict]
+    ERROR spec.bundle.manifest-missing [spec; SPECIFICATION.md §2] project.json#/provenance: provenance manifest not found at provenance.json
+    INVALID: 1 error(s), 0 warning(s), 0 info
+    exit=1
+### derived/path-escape-and-remote [default]
+    ERROR policy.ref.remote-manifest [policy; SPECIFICATION.md §9] project.json#/rights: rights manifest is remote (https://example.org/remote/rights.json) and was not fetched
+    ERROR policy.ref.rejected [policy; SPECIFICATION.md §9] components.json#/components/0/content/href:13:17 (work:paper-moon): Unsafe content reference "../outside.md" (escapes-root)
+    ERROR policy.ref.rejected [policy; SPECIFICATION.md §9] components.json#/components/1/content/href:27:17 (work:after-the-static): Unsafe content reference "content/%2e%2e/%2e%2e/secret.md" (escapes-root)
+    INVALID: 3 error(s), 0 warning(s), 0 info
+    exit=1
+### derived/path-escape-and-remote [strict]
+    ERROR policy.ref.remote-manifest [policy; SPECIFICATION.md §9] project.json#/rights: rights manifest is remote (https://example.org/remote/rights.json) and was not fetched
+    ERROR policy.ref.rejected [policy; SPECIFICATION.md §9] components.json#/components/0/content/href:13:17 (work:paper-moon): Unsafe content reference "../outside.md" (escapes-root)
+    ERROR policy.ref.rejected [policy; SPECIFICATION.md §9] components.json#/components/1/content/href:27:17 (work:after-the-static): Unsafe content reference "content/%2e%2e/%2e%2e/secret.md" (escapes-root)
+    INVALID: 3 error(s), 0 warning(s), 0 info
+    exit=1
+### derived/project-id-not-uri [default]
+    ERROR schema.format [schema; schemas/v0.1/project.schema.json#/properties/id/format] project.json#/id:3:9: /id must match format "uri" (format "uri")
+    ERROR spec.id.project-not-absolute-uri [spec; SPECIFICATION.md §3.2] project.json#/id:3:9: Project id "glass-harbor" is not an absolute URI
+    WARNING reference-checker.project-mismatch [reference-checker; lit-spec scripts/validate.py @00fe701] components.json#/project:3:14: components.project "https://example.org/lit/glass-harbor" does not equal project.id "glass-harbor"
+    WARNING reference-checker.project-mismatch [reference-checker; lit-spec scripts/validate.py @00fe701] canon.json#/project:3:14: canon.project "https://example.org/lit/glass-harbor" does not equal project.id "glass-harbor"
+    WARNING reference-checker.project-mismatch [reference-checker; lit-spec scripts/validate.py @00fe701] provenance.json#/project:3:14: provenance.project "https://example.org/lit/glass-harbor" does not equal project.id "glass-harbor"
+    WARNING reference-checker.project-mismatch [reference-checker; lit-spec scripts/validate.py @00fe701] rights.json#/project:3:14: rights.project "https://example.org/lit/glass-harbor" does not equal project.id "glass-harbor"
+    INVALID: 2 error(s), 4 warning(s), 0 info
+    exit=1
+### derived/project-id-not-uri [strict]
+    ERROR schema.format [schema; schemas/v0.1/project.schema.json#/properties/id/format] project.json#/id:3:9: /id must match format "uri" (format "uri")
+    ERROR spec.id.project-not-absolute-uri [spec; SPECIFICATION.md §3.2] project.json#/id:3:9: Project id "glass-harbor" is not an absolute URI
+    ERROR reference-checker.project-mismatch [reference-checker; lit-spec scripts/validate.py @00fe701] components.json#/project:3:14: components.project "https://example.org/lit/glass-harbor" does not equal project.id "glass-harbor"
+    ERROR reference-checker.project-mismatch [reference-checker; lit-spec scripts/validate.py @00fe701] canon.json#/project:3:14: canon.project "https://example.org/lit/glass-harbor" does not equal project.id "glass-harbor"
+    ERROR reference-checker.project-mismatch [reference-checker; lit-spec scripts/validate.py @00fe701] provenance.json#/project:3:14: provenance.project "https://example.org/lit/glass-harbor" does not equal project.id "glass-harbor"
+    ERROR reference-checker.project-mismatch [reference-checker; lit-spec scripts/validate.py @00fe701] rights.json#/project:3:14: rights.project "https://example.org/lit/glass-harbor" does not equal project.id "glass-harbor"
+    INVALID: 6 error(s), 0 warning(s), 0 info
+    exit=1
+### derived/unsupported-major [default]
+    ERROR spec.version.unsupported-major [spec; SPECIFICATION.md §3.1, §10] project.json#/litVersion:2:17: litVersion 1.0.0 has unsupported major version 1; this consumer cannot safely process the bundle
+    ERROR spec.version.unsupported-major [spec; SPECIFICATION.md §3.1, §10] components.json#/litVersion:2:17: litVersion 1.0.0 has unsupported major version 1; this consumer cannot safely process the bundle
+    ERROR spec.version.unsupported-major [spec; SPECIFICATION.md §3.1, §10] canon.json#/litVersion:2:17: litVersion 1.0.0 has unsupported major version 1; this consumer cannot safely process the bundle
+    ERROR spec.version.unsupported-major [spec; SPECIFICATION.md §3.1, §10] provenance.json#/litVersion:2:17: litVersion 1.0.0 has unsupported major version 1; this consumer cannot safely process the bundle
+    ERROR spec.version.unsupported-major [spec; SPECIFICATION.md §3.1, §10] rights.json#/litVersion:2:17: litVersion 1.0.0 has unsupported major version 1; this consumer cannot safely process the bundle
+    INVALID: 5 error(s), 0 warning(s), 0 info
+    exit=1
+### derived/unsupported-major [strict]
+    ERROR spec.version.unsupported-major [spec; SPECIFICATION.md §3.1, §10] project.json#/litVersion:2:17: litVersion 1.0.0 has unsupported major version 1; this consumer cannot safely process the bundle
+    ERROR spec.version.unsupported-major [spec; SPECIFICATION.md §3.1, §10] components.json#/litVersion:2:17: litVersion 1.0.0 has unsupported major version 1; this consumer cannot safely process the bundle
+    ERROR spec.version.unsupported-major [spec; SPECIFICATION.md §3.1, §10] canon.json#/litVersion:2:17: litVersion 1.0.0 has unsupported major version 1; this consumer cannot safely process the bundle
+    ERROR spec.version.unsupported-major [spec; SPECIFICATION.md §3.1, §10] provenance.json#/litVersion:2:17: litVersion 1.0.0 has unsupported major version 1; this consumer cannot safely process the bundle
+    ERROR spec.version.unsupported-major [spec; SPECIFICATION.md §3.1, §10] rights.json#/litVersion:2:17: litVersion 1.0.0 has unsupported major version 1; this consumer cannot safely process the bundle
+    INVALID: 5 error(s), 0 warning(s), 0 info
+    exit=1
+### derived/version-mismatch [default]
+    WARNING spec.version.no-matching-schema [spec; SPECIFICATION.md §2, §10] rights.json#/litVersion:2:17: litVersion 0.2.0 has no bundled schema; validated against v0.1 schemas
+    WARNING spec.version.mismatch [spec; SPECIFICATION.md §3.1, §11.1] bundle: Manifests declare different litVersions: project=0.1.0, components=0.1.0, canon=0.1.0, provenance=0.1.0, rights=0.2.0
+    VALID: 0 error(s), 2 warning(s), 0 info
+    exit=0
+### derived/version-mismatch [strict]
+    WARNING spec.version.no-matching-schema [spec; SPECIFICATION.md §2, §10] rights.json#/litVersion:2:17: litVersion 0.2.0 has no bundled schema; validated against v0.1 schemas
+    WARNING spec.version.mismatch [spec; SPECIFICATION.md §3.1, §11.1] bundle: Manifests declare different litVersions: project=0.1.0, components=0.1.0, canon=0.1.0, provenance=0.1.0, rights=0.2.0
+    VALID: 0 error(s), 2 warning(s), 0 info
+    exit=0
+### derived/wrong-types [default]
+    ERROR schema.type [schema; schemas/v0.1/project.schema.json#/properties/title/type] project.json#/title:4:12: /title must be string
+    ERROR schema.type [schema; schemas/v0.1/components.schema.json#/properties/sequence/type] components.json#/components/0/sequence:10:19 (chapter:arrival): /components/0/sequence must be integer
+    INVALID: 2 error(s), 0 warning(s), 0 info
+    exit=1
+### derived/wrong-types [strict]
+    ERROR schema.type [schema; schemas/v0.1/project.schema.json#/properties/title/type] project.json#/title:4:12: /title must be string
+    ERROR schema.type [schema; schemas/v0.1/components.schema.json#/properties/sequence/type] components.json#/components/0/sequence:10:19 (chapter:arrival): /components/0/sequence must be integer
+    INVALID: 2 error(s), 0 warning(s), 0 info
+    exit=1

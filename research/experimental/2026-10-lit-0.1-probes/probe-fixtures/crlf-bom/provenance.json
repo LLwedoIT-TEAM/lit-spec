@@ -1,0 +1,27 @@
+﻿{
+  "litVersion": "0.1.0",
+  "project": "https://example.org/lit/glass-harbor",
+  "agents": [
+    {
+      "id": "person:mira-vale",
+      "type": "person",
+      "name": "Mira Vale"
+    }
+  ],
+  "activities": [
+    {
+      "id": "activity:initial-draft",
+      "type": "creation",
+      "agentIds": [
+        "person:mira-vale"
+      ],
+      "outputs": [
+        "chapter:arrival",
+        "chapter:signal"
+      ],
+      "startedAt": "2026-01-12T09:00:00Z",
+      "endedAt": "2026-02-03T18:30:00Z",
+      "humanReviewed": true
+    }
+  ]
+}
