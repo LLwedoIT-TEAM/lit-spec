@@ -11,7 +11,7 @@
 | LC-03 | Unparseable manifests must be reported, not crash | Invalid UTF-8, BOM, malformed JSON, and missing required members need structured validator behaviour. | [PROPOSED_CLARIFICATIONS.md](./PROPOSED_CLARIFICATIONS.md) | in proposal P-0001 |
 | LC-04 | Duplicate JSON keys and non-interoperable numbers | I-JSON uniqueness and JS number precision affect identifier stability across tools. | [PROPOSED_CLARIFICATIONS.md](./PROPOSED_CLARIFICATIONS.md) | in proposal P-0001 |
 | LC-05 | Integrity digest mismatch | SHOULD verify vs MUST on failure is unclear; byte scope for `encoding` unset. | [PROPOSED_CLARIFICATIONS.md](./PROPOSED_CLARIFICATIONS.md) | in proposal P-0001 |
-| LC-06 | Manifest location via `project.json` | Relocated manifests vs hard-coded names; remote manifest dereference undefined. | [PROPOSED_CLARIFICATIONS.md](./PROPOSED_CLARIFICATIONS.md) | recorded, deferred |
+| LC-06 | Manifest location via `project.json` | Relocated manifests vs hard-coded names; remote manifest dereference undefined. | [PROPOSED_CLARIFICATIONS.md](./PROPOSED_CLARIFICATIONS.md) | in proposal P-0001 |
 | LC-07 | Referential integrity field list and severity | SHOULD vs CI error; which fields are bundle references is unspecified. | [PROPOSED_CLARIFICATIONS.md](./PROPOSED_CLARIFICATIONS.md) | recorded, deferred |
 | LC-08 | Compatible versions across manifests | “Compatible” undefined for 0.x minors; schema selection for undeclared minors unclear. | [PROPOSED_CLARIFICATIONS.md](./PROPOSED_CLARIFICATIONS.md) | recorded, deferred |
 | LC-09 | Entity collection scope for ID uniqueness | Duplicate assertion IDs not checked consistently; collections not enumerated. | [PROPOSED_CLARIFICATIONS.md](./PROPOSED_CLARIFICATIONS.md) | in proposal P-0001 |
