@@ -27,7 +27,7 @@ The work produced clarification items **LC-01..LC-35**, synthetic **probe fixtur
 | [REAL_BUNDLE_CLARIFICATIONS.md](./REAL_BUNDLE_CLARIFICATIONS.md) | Generic LC-19..LC-35 definitions from real-bundle testing (no unpublished manuscript text) |
 | [CLARIFICATION_REGISTER.md](./CLARIFICATION_REGISTER.md) | Index of all LC items, sources, and disposition |
 | [make-probes.py](./make-probes.py) | Regenerates `probe-fixtures/` from [`examples/novel`](../../../examples/novel) |
-| [probe-fixtures/](./probe-fixtures/) | Eight synthetic non-conforming bundles |
+| [probe-fixtures/](./probe-fixtures/) | Eight synthetic conformance and edge-case bundles, including intentionally invalid cases |
 | [evidence/](./evidence/) | Scripts used for the original run and **unchanged** captured output |
 
 Manuscript-specific reports that motivated LC-19..LC-27 were **not** committed (unreleased work). Only neutral summaries appear in `REAL_BUNDLE_CLARIFICATIONS.md`.
@@ -56,17 +56,21 @@ rm -rf "$TMP"
 
 Compare results to [evidence/probes-run.txt](./evidence/probes-run.txt). That log also includes `lit-core` runs, which require a separate checkout of the prototype (see below).
 
+The repository's `Validate LIT` workflow invokes `scripts/validate.py` only against the standard `examples/` tree. It does not execute this probe loop or validate the captured `lit-core` results.
+
 ## Re-run full evidence capture (optional)
 
 The recorded logs in `evidence/` were produced on a developer machine that also had:
 
 - A Python virtualenv with `jsonschema[format]` (see [requirements-dev.txt](../../../requirements-dev.txt))
-- A checkout of the `lit-core` prototype at a fixed revision
+- A checkout of the `lit-core` prototype and a separate set of derived fixtures
 
-Scripts under `evidence/` still contain **historical absolute paths** (`/workspace/...`) from that environment. They are preserved verbatim as run artifacts. To replay:
+The repository URL and commit SHA for that prototype, and the derived fixture contents, were not recorded here. The scripts under `evidence/` contain **historical absolute paths** under `/workspace/lit-core-prototype`; they are preserved verbatim as run artifacts. Consequently, the full cross-validator evidence cannot be reproduced from this repository alone.
+
+If the original prototype checkout and derived fixtures are recovered, replay requires:
 
 1. Set `LIT_SPEC_ROOT` to this repository root.
-2. Set `LIT_CORE_ROOT` to your `lit-core` prototype checkout (with `vendor/lit-spec` mirroring commit `00fe701`).
+2. Set `LIT_CORE_ROOT` to that recovered `lit-core` prototype checkout (with `vendor/lit-spec` mirroring commit `00fe701`).
 3. Set `PYTHON` to a Python interpreter with dependencies installed.
 4. Edit or wrap the scripts to substitute those variables for the hard-coded paths, **or** reproduce the probe loop manually as above.
 
