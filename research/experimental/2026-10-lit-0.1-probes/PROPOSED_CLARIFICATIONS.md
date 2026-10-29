@@ -272,9 +272,11 @@ validate.py's non-zero exit does fail CI. But the crash stops all other findings
 **Why it's ambiguous.** "Entity collection" is never enumerated, and §11.2's "defined scopes" are never defined. The duplicate assertion is the dangerous case. Two assertions with one ID and different `status` invite a consumer to merge them, which conflicts with §6 ("MUST NOT collapse `ambiguous` or `disputed` assertions").
 
 **Proposed wording (§3.2).**
-> The entity collections are: `project.contributors`, `components.components`, `canon.assertions`, `provenance.agents`, `provenance.activities`, `rights.holders`, and `rights.grants`. IDs MUST be unique within each collection. The same ID MAY appear in different collections and identifies distinct entities unless a future version states otherwise. Consumers MUST NOT merge entries that share an ID.
+> The entity collections are: `project.contributors`, `components.components`, `canon.assertions`, `provenance.agents`, `provenance.activities`, `rights.holders`, and `rights.grants`. IDs MUST be unique within each collection. LIT 0.1 does not define identity semantics for identical ID strings appearing in different collections. Consumers MUST NOT infer that entries in different collections represent either the same or different underlying entity solely because their ID strings match.
 
-**Suggested severity:** error. *Open question for maintainers:* should IDs instead be unique bundle-wide? Cross-collection reuse currently makes references like `grants[].assets` unambiguous only because the target collection is fixed.
+**Suggested severity:** error.
+
+**Open question.** IDs identify entities within a defined collection. Whether separately identified entities represent the same underlying identity is a relationship question. This proposal defines uniqueness within each collection only and leaves cross-collection identity semantics for separate design work (see Open questions).
 
 **Proposed conformance fixtures:** `conformance/invalid/duplicate-id-<collection>/`, seven fixtures, one per collection.
 
@@ -459,6 +461,10 @@ The numbers are placeholders for maintainers to choose.
 **Suggested severity:** n/a (behavioural). **Proposed conformance fixture:** `conformance/roundtrip/extension-preservation/` with nested unknown extension data, CRLF line endings and `\u00e9` escapes. Expected: data-model equality after load → serialize → reload.
 
 ---
+
+## Open questions
+
+1. **LC-09:** Should LIT 0.1 clarify uniqueness only within each defined collection and leave cross-collection identity undefined, or should a future LIT version introduce bundle-wide identity semantics or explicit identity relationships?
 
 ## Not raised as clarifications
 These were found, but no spec change is proposed:
