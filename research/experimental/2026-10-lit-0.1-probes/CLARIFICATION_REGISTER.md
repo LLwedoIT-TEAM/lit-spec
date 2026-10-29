@@ -42,4 +42,4 @@
 | LC-34 | Extended knowledge-state vocabulary | Silence, avoidance, and rationalization states for continuity rules. | [REAL_BUNDLE_CLARIFICATIONS.md](./REAL_BUNDLE_CLARIFICATIONS.md) | recorded, deferred |
 | LC-35 | Deliberate ambiguity | Intentionally open artifacts should not surface as hard continuity errors. | [REAL_BUNDLE_CLARIFICATIONS.md](./REAL_BUNDLE_CLARIFICATIONS.md) | recorded, deferred |
 
-**Proposal P-0001** (`proposals/P-0001-validator-conformance-and-representation-safety.md`) is introduced in pull request B stacked on this research import.
+**Proposal P-0001:** [proposals/P-0001-validator-conformance-and-representation-safety.md](../../../proposals/P-0001-validator-conformance-and-representation-safety.md) (pull request B, stacked on the research import).
