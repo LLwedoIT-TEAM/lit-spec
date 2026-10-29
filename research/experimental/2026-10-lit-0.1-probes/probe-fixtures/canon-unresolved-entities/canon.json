@@ -1,0 +1,30 @@
+{
+  "litVersion": "0.1.0",
+  "project": "https://example.org/lit/glass-harbor",
+  "assertions": [
+    {
+      "id": "canon:lighthouse-status",
+      "subject": "character:nobody",
+      "predicate": "operational-status",
+      "value": "officially abandoned",
+      "status": "canonical",
+      "evidence": [
+        "chapter:does-not-exist"
+      ]
+    },
+    {
+      "id": "canon:signal-source",
+      "subject": "event:midnight-signal",
+      "predicate": "source",
+      "object": "place:nowhere",
+      "status": "ambiguous",
+      "evidence": [
+        "chapter:signal"
+      ],
+      "note": "The narration reports the apparent source but does not confirm who produced it.",
+      "scope": [
+        "branch:unknown"
+      ]
+    }
+  ]
+}

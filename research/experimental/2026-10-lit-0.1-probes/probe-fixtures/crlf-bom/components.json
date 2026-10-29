@@ -1,0 +1,41 @@
+﻿{
+  "litVersion": "0.1.0",
+  "project": "https://example.org/lit/glass-harbor",
+  "components": [
+    {
+      "id": "chapter:arrival",
+      "type": "chapter",
+      "title": "Arrival",
+      "language": "en",
+      "sequence": 1,
+      "content": {
+        "mediaType": "text/markdown",
+        "inline": "The ferry reached Glass Harbor before the fog lifted."
+      },
+      "contributors": [
+        "person:mira-vale"
+      ]
+    },
+    {
+      "id": "chapter:signal",
+      "type": "chapter",
+      "title": "The Signal",
+      "language": "en",
+      "sequence": 2,
+      "content": {
+        "mediaType": "text/markdown",
+        "inline": "At midnight, the abandoned lighthouse answered with three white flashes."
+      },
+      "contributors": [
+        "person:mira-vale"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "chapter:arrival",
+      "target": "chapter:signal",
+      "type": "precedes"
+    }
+  ]
+}

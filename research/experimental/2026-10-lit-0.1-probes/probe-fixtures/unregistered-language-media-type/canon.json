@@ -1,0 +1,27 @@
+{
+  "litVersion": "0.1.0",
+  "project": "https://example.org/lit/glass-harbor",
+  "assertions": [
+    {
+      "id": "canon:lighthouse-status",
+      "subject": "place:lighthouse",
+      "predicate": "operational-status",
+      "value": "officially abandoned",
+      "status": "canonical",
+      "evidence": [
+        "chapter:arrival"
+      ]
+    },
+    {
+      "id": "canon:signal-source",
+      "subject": "event:midnight-signal",
+      "predicate": "source",
+      "object": "place:lighthouse",
+      "status": "ambiguous",
+      "evidence": [
+        "chapter:signal"
+      ],
+      "note": "The narration reports the apparent source but does not confirm who produced it."
+    }
+  ]
+}

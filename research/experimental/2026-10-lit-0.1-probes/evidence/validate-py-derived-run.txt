@@ -1,0 +1,86 @@
+### upstream/anthology: exit=0
+    Validated 5 schemas and all example bundles; cross-reference checks passed.
+### upstream/nonlinear-fiction: exit=0
+    Validated 5 schemas and all example bundles; cross-reference checks passed.
+### upstream/novel: exit=0
+    Validated 5 schemas and all example bundles; cross-reference checks passed.
+### day-one/day-one-stress-test: exit=0
+    Validated 5 schemas and all example bundles; cross-reference checks passed.
+### derived/assertion-object-and-value: exit=1
+    Validation failed:
+    - examples/assertion-object-and-value/canon.json:assertions/0: {'id': 'canon:lighthouse-status', 'subject': 'place:lighthouse', 'predicate': 'operational-status', 'value': 'officially abandoned', 'status': 'canonical', 'evidence': ['chapter:arrival'], 'object': 'character:extra'} is not valid under any of the given schemas
+    - examples/assertion-object-and-value/canon.json:assertions/1/status: 'hidden' is not one of ['canonical', 'provisional', 'disputed', 'retconned', 'ambiguous']
+### derived/bad-semver: exit=1
+    Validation failed:
+    - examples/bad-semver/components.json:litVersion: '0.1' does not match '^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$'
+    - examples/bad-semver: inconsistent litVersion values
+### derived/content-inline-and-href: exit=1
+    Validation failed:
+    - examples/content-inline-and-href/components.json:components/0/content: {'mediaType': 'text/markdown', 'inline': 'The ferry reached Glass Harbor before the fog lifted.', 'href': 'chapter-1.md'} is not valid under any of the given schemas
+### derived/custom-property-outside-extensions: exit=1
+    Validation failed:
+    - examples/custom-property-outside-extensions/project.json:<root>: Additional properties are not allowed ('mspDraft' was unexpected)
+    - examples/custom-property-outside-extensions/components.json:components/0: Additional properties are not allowed ('wordCount' was unexpected)
+### derived/dangling-references: exit=1
+    Validation failed:
+    - examples/dangling-references: relationship target node:missing is not a component
+    - examples/dangling-references: activity activity:story-design has unknown agents ['person:nobody']
+    - examples/dangling-references: grant grant:lantern-map-sample has unknown holder org:unknown-holder
+    - examples/dangling-references: grant grant:lantern-map-sample has unknown assets ['node:phantom']
+### derived/duplicate-ids: exit=1
+    Validation failed:
+    - examples/duplicate-ids: duplicate component ID chapter:arrival
+### derived/duplicate-sequence: exit=1
+    Validation failed:
+    - examples/duplicate-sequence: duplicate sequence 1
+### derived/integrity-mismatch: exit=0
+    Validated 5 schemas and all example bundles; cross-reference checks passed.
+### derived/invalid-utf8-project: exit=1
+    Traceback (most recent call last):
+      File "/tmp/tmp.ZFSh7JzYn6/scripts/validate.py", line 158, in <module>
+        raise SystemExit(main())
+                         ~~~~^^
+      File "/tmp/tmp.ZFSh7JzYn6/scripts/validate.py", line 146, in main
+        errors = validate()
+      File "/tmp/tmp.ZFSh7JzYn6/scripts/validate.py", line 51, in validate
+        document = load_json(path)
+      File "/tmp/tmp.ZFSh7JzYn6/scripts/validate.py", line 18, in load_json
+        return json.load(source)
+               ~~~~~~~~~^^^^^^^^
+      File "/usr/lib/python3.13/json/__init__.py", line 293, in load
+### derived/lossy-json: exit=0
+    Validated 5 schemas and all example bundles; cross-reference checks passed.
+### derived/malformed-json-canon: exit=1
+    Traceback (most recent call last):
+      File "/tmp/tmp.h6Rlt9uWQF/scripts/validate.py", line 158, in <module>
+        raise SystemExit(main())
+                         ~~~~^^
+      File "/tmp/tmp.h6Rlt9uWQF/scripts/validate.py", line 146, in main
+        errors = validate()
+      File "/tmp/tmp.h6Rlt9uWQF/scripts/validate.py", line 51, in validate
+        document = load_json(path)
+      File "/tmp/tmp.h6Rlt9uWQF/scripts/validate.py", line 18, in load_json
+        return json.load(source)
+               ~~~~~~~~~^^^^^^^^
+      File "/usr/lib/python3.13/json/__init__.py", line 293, in load
+### derived/missing-manifest: exit=1
+    Validation failed:
+    - examples/missing-manifest/provenance.json: required manifest is missing
+### derived/path-escape-and-remote: exit=0
+    Validated 5 schemas and all example bundles; cross-reference checks passed.
+### derived/project-id-not-uri: exit=1
+    Validation failed:
+    - examples/project-id-not-uri/project.json:id: 'glass-harbor' is not a 'uri'
+    - examples/project-id-not-uri/components.json: project reference mismatch
+    - examples/project-id-not-uri/canon.json: project reference mismatch
+    - examples/project-id-not-uri/provenance.json: project reference mismatch
+    - examples/project-id-not-uri/rights.json: project reference mismatch
+### derived/unsupported-major: exit=0
+    Validated 5 schemas and all example bundles; cross-reference checks passed.
+### derived/version-mismatch: exit=1
+    Validation failed:
+    - examples/version-mismatch: inconsistent litVersion values
+### derived/wrong-types: exit=1
+    Validation failed:
+    - examples/wrong-types/project.json:title: 42 is not of type 'string'
+    - examples/wrong-types/components.json:components/0/sequence: '1' is not of type 'integer'

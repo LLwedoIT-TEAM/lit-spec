@@ -1,0 +1,146 @@
+### probe/big-integer-extension validate.py
+    Validated 5 schemas and all example bundles; cross-reference checks passed.
+    exit=0
+### probe/big-integer-extension lit-core [default]
+    WARNING policy.json.number-precision [policy; SPECIFICATION.md §2, §3.5 (preservation)] canon.json#/extensions/https:~1~1example.org~1ext~1probe~1v0/bigId:29:16: Number 12345678901234567890 cannot be represented exactly as an IEEE-754 double
+    VALID: 0 error(s), 1 warning(s), 0 info
+    exit=0
+### probe/big-integer-extension lit-core --strict-references
+    WARNING policy.json.number-precision [policy; SPECIFICATION.md §2, §3.5 (preservation)] canon.json#/extensions/https:~1~1example.org~1ext~1probe~1v0/bigId:29:16: Number 12345678901234567890 cannot be represented exactly as an IEEE-754 double
+    VALID: 0 error(s), 1 warning(s), 0 info
+    exit=0
+### probe/big-integer-extension lit-core --proposed
+    WARNING policy.json.number-precision [policy; SPECIFICATION.md §2, §3.5 (preservation)] canon.json#/extensions/https:~1~1example.org~1ext~1probe~1v0/bigId:29:16: Number 12345678901234567890 cannot be represented exactly as an IEEE-754 double
+    VALID: 0 error(s), 1 warning(s), 0 info
+    exit=0
+### probe/canon-unresolved-entities validate.py
+    Validated 5 schemas and all example bundles; cross-reference checks passed.
+    exit=0
+### probe/canon-unresolved-entities lit-core [default]
+    VALID: 0 error(s), 0 warning(s), 0 info
+    exit=0
+### probe/canon-unresolved-entities lit-core --strict-references
+    VALID: 0 error(s), 0 warning(s), 0 info
+    exit=0
+### probe/canon-unresolved-entities lit-core --proposed
+    WARNING proposed.canon.evidence-unresolved [proposed; proposed (cf. §3.2)] canon.json#/assertions/0/evidence/0:12:9 (canon:lighthouse-status): Evidence "chapter:does-not-exist" is not an ID in this bundle
+    VALID: 0 error(s), 1 warning(s), 0 info
+    exit=0
+### probe/crlf-bom validate.py
+        return loads(fp.read(),
+            cls=cls, object_hook=object_hook,
+            parse_float=parse_float, parse_int=parse_int,
+            parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+      File "/usr/lib/python3.13/json/__init__.py", line 335, in loads
+        raise JSONDecodeError("Unexpected UTF-8 BOM (decode using utf-8-sig)",
+                              s, 0)
+    json.decoder.JSONDecodeError: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)
+    exit=1
+### probe/crlf-bom lit-core [default]
+    WARNING policy.json.bom [policy; RFC 8259 §8.1] project.json: project.json starts with a UTF-8 byte order mark
+    WARNING policy.json.bom [policy; RFC 8259 §8.1] components.json: components.json starts with a UTF-8 byte order mark
+    WARNING policy.json.bom [policy; RFC 8259 §8.1] canon.json: canon.json starts with a UTF-8 byte order mark
+    WARNING policy.json.bom [policy; RFC 8259 §8.1] provenance.json: provenance.json starts with a UTF-8 byte order mark
+    WARNING policy.json.bom [policy; RFC 8259 §8.1] rights.json: rights.json starts with a UTF-8 byte order mark
+    VALID: 0 error(s), 5 warning(s), 0 info
+    exit=0
+### probe/crlf-bom lit-core --strict-references
+    WARNING policy.json.bom [policy; RFC 8259 §8.1] project.json: project.json starts with a UTF-8 byte order mark
+    WARNING policy.json.bom [policy; RFC 8259 §8.1] components.json: components.json starts with a UTF-8 byte order mark
+    WARNING policy.json.bom [policy; RFC 8259 §8.1] canon.json: canon.json starts with a UTF-8 byte order mark
+    WARNING policy.json.bom [policy; RFC 8259 §8.1] provenance.json: provenance.json starts with a UTF-8 byte order mark
+    WARNING policy.json.bom [policy; RFC 8259 §8.1] rights.json: rights.json starts with a UTF-8 byte order mark
+    VALID: 0 error(s), 5 warning(s), 0 info
+    exit=0
+### probe/crlf-bom lit-core --proposed
+    WARNING policy.json.bom [policy; RFC 8259 §8.1] project.json: project.json starts with a UTF-8 byte order mark
+    WARNING policy.json.bom [policy; RFC 8259 §8.1] components.json: components.json starts with a UTF-8 byte order mark
+    WARNING policy.json.bom [policy; RFC 8259 §8.1] canon.json: canon.json starts with a UTF-8 byte order mark
+    WARNING policy.json.bom [policy; RFC 8259 §8.1] provenance.json: provenance.json starts with a UTF-8 byte order mark
+    WARNING policy.json.bom [policy; RFC 8259 §8.1] rights.json: rights.json starts with a UTF-8 byte order mark
+    VALID: 0 error(s), 5 warning(s), 0 info
+    exit=0
+### probe/missing-litversion validate.py
+        raise SystemExit(main())
+                         ~~~~^^
+      File "/tmp/tmp.hpLMMmycHC/scripts/validate.py", line 146, in main
+        errors = validate()
+      File "/tmp/tmp.hpLMMmycHC/scripts/validate.py", line 63, in validate
+        versions = {documents[name]["litVersion"] for name in MANIFEST_NAMES}
+                    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+    KeyError: 'litVersion'
+    exit=1
+### probe/missing-litversion lit-core [default]
+    ERROR schema.required [schema; schemas/v0.1/rights.schema.json#/required] rights.json:1:1: (root) must have required property 'litVersion' ("litVersion")
+    ERROR spec.version.missing [spec; SPECIFICATION.md §3.1] rights.json#/litVersion: rights manifest has no string litVersion
+    INVALID: 2 error(s), 0 warning(s), 0 info
+    exit=1
+### probe/missing-litversion lit-core --strict-references
+    ERROR schema.required [schema; schemas/v0.1/rights.schema.json#/required] rights.json:1:1: (root) must have required property 'litVersion' ("litVersion")
+    ERROR spec.version.missing [spec; SPECIFICATION.md §3.1] rights.json#/litVersion: rights manifest has no string litVersion
+    INVALID: 2 error(s), 0 warning(s), 0 info
+    exit=1
+### probe/missing-litversion lit-core --proposed
+    ERROR schema.required [schema; schemas/v0.1/rights.schema.json#/required] rights.json:1:1: (root) must have required property 'litVersion' ("litVersion")
+    ERROR spec.version.missing [spec; SPECIFICATION.md §3.1] rights.json#/litVersion: rights manifest has no string litVersion
+    INVALID: 2 error(s), 0 warning(s), 0 info
+    exit=1
+### probe/relocated-manifests validate.py
+    Validation failed:
+    - examples/relocated-manifests/components.json: required manifest is missing
+    - examples/relocated-manifests/canon.json: required manifest is missing
+    - examples/relocated-manifests/provenance.json: required manifest is missing
+    - examples/relocated-manifests/rights.json: required manifest is missing
+    exit=1
+### probe/relocated-manifests lit-core [default]
+    VALID: 0 error(s), 0 warning(s), 0 info
+    exit=0
+### probe/relocated-manifests lit-core --strict-references
+    VALID: 0 error(s), 0 warning(s), 0 info
+    exit=0
+### probe/relocated-manifests lit-core --proposed
+    VALID: 0 error(s), 0 warning(s), 0 info
+    exit=0
+### probe/remote-content-href validate.py
+    Validated 5 schemas and all example bundles; cross-reference checks passed.
+    exit=0
+### probe/remote-content-href lit-core [default]
+    INFO spec.ref.remote-not-fetched [spec; SPECIFICATION.md §9] components.json#/components/0/content/href:13:17 (chapter:arrival): Remote content https://example.org/remote/arrival.md was not fetched
+    VALID: 0 error(s), 0 warning(s), 1 info
+    exit=0
+### probe/remote-content-href lit-core --strict-references
+    INFO spec.ref.remote-not-fetched [spec; SPECIFICATION.md §9] components.json#/components/0/content/href:13:17 (chapter:arrival): Remote content https://example.org/remote/arrival.md was not fetched
+    VALID: 0 error(s), 0 warning(s), 1 info
+    exit=0
+### probe/remote-content-href lit-core --proposed
+    INFO spec.ref.remote-not-fetched [spec; SPECIFICATION.md §9] components.json#/components/0/content/href:13:17 (chapter:arrival): Remote content https://example.org/remote/arrival.md was not fetched
+    VALID: 0 error(s), 0 warning(s), 1 info
+    exit=0
+### probe/uncovered-component validate.py
+    Validation failed:
+    - examples/uncovered-component: components without a rights grant ['chapter:signal']
+    exit=1
+### probe/uncovered-component lit-core [default]
+    WARNING spec.rights.component-not-covered [spec; SPECIFICATION.md §11.6] components.json#/components/1:19:5 (chapter:signal): Component chapter:signal is not covered by any rights grant
+    VALID: 0 error(s), 1 warning(s), 0 info
+    exit=0
+### probe/uncovered-component lit-core --strict-references
+    WARNING spec.rights.component-not-covered [spec; SPECIFICATION.md §11.6] components.json#/components/1:19:5 (chapter:signal): Component chapter:signal is not covered by any rights grant
+    VALID: 0 error(s), 1 warning(s), 0 info
+    exit=0
+### probe/uncovered-component lit-core --proposed
+    WARNING spec.rights.component-not-covered [spec; SPECIFICATION.md §11.6] components.json#/components/1:19:5 (chapter:signal): Component chapter:signal is not covered by any rights grant
+    VALID: 0 error(s), 1 warning(s), 0 info
+    exit=0
+### probe/unregistered-language-media-type validate.py
+    Validated 5 schemas and all example bundles; cross-reference checks passed.
+    exit=0
+### probe/unregistered-language-media-type lit-core [default]
+    VALID: 0 error(s), 0 warning(s), 0 info
+    exit=0
+### probe/unregistered-language-media-type lit-core --strict-references
+    VALID: 0 error(s), 0 warning(s), 0 info
+    exit=0
+### probe/unregistered-language-media-type lit-core --proposed
+    VALID: 0 error(s), 0 warning(s), 0 info
+    exit=0
